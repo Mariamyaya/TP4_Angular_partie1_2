@@ -1,3 +1,23 @@
+
+<h1>Capture1: affichage du 1er composant<h1>
+<img src="captures/c1.png">
+<h1>Capture2: affichage d'un produit selon son id <h1>
+<img src="captures/c2.png">
+<h1>Capture3: affichage des produits <h1>
+<img src="captures/c3.png">
+<h1>Capture4: Affichage de tout les produits après le test de chacked<h1>
+<img src="captures/c4.png">
+<h1>Capture5: Test avec type script<h1>
+<img src="captures/c5.png">
+<h1>Capture6: Ajout des boutons d'action delete et un alert<h1>
+<img src="captures/c6.png">
+<h1>Capture7: Ajout de formulaire de la creation des produits<h1>
+<img src="captures/c7.png">
+<h1>Capture8: Test de la creation d'un produit <h1>
+<img src="captures/c8.png">
+<h1>Capture8: Formulaire d'ajout<h1>
+<img src="captures/c9.png"/>
+
 # EnsetApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
