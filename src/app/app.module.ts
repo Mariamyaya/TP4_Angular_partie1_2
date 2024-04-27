@@ -8,18 +8,21 @@ import { ProductsComponent } from './products/products.component';
 import { NewProductsComponent } from './new-products/new-products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductsComponent,
-    NewProductsComponent
+    NewProductsComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, ReactiveFormsModule, FormsModule
+    HttpClientModule, ReactiveFormsModule, FormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

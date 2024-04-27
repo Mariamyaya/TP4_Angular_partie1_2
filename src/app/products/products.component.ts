@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../model/product.model';
 import { ProductService } from '../services/product.service';
@@ -10,14 +11,34 @@ import { ProductService } from '../services/product.service';
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit{
+  public page = 1;
+  public pageSize = 5; // Nombre d'éléments par page
 
+  totalPages: number = 0;
+  currentPage: number = 1;
+  //products: Array<Product> = [];
+ // keyword: string = "";
+
+goToPage(page: number) {
+  if (page >= 1 && page <= this.totalPages) {
+    this.currentPage = page;
+    this.page = page;
+    this.getProducts();
+  }
+}
+generatePageNumbers(): number[] {
+  return Array(this.totalPages).fill(0).map((x, i) => i + 1);
+}
 
 
   //private http!:HttpClient;
-  constructor(private productservice:ProductService ){}
+  constructor(private productservice:ProductService, private router:Router ){}
 
-  products:Array<Product> =[]
-  public keyword: string="";
+ public products:Array<Product> =[]
+  keyword: string="";
+  //totalPages:number=0;
+  //pageSize:number=3;
+  //currentPage:number=1;
 
 
   ngOnInit(): void {
@@ -26,10 +47,18 @@ export class ProductsComponent implements OnInit{
 
   getProducts(){
 
-   // this.products = this.productservice.getProduct()
-    this.productservice.getProducts(1, 2)
+    this.productservice.getProducts(this.page, this.pageSize)
+    this.productservice.getProducts(1, 100)
     .subscribe({
-      next :data =>{this.products=data
+      next :(resp) =>{
+        this.products=resp.body as Product[];
+        this.totalPages = Math.ceil(this.products.length / this.pageSize);
+       // let totalProducts:number=parseInt(resp.headers.get('x-total-count')!);
+        console.log("zzto",this.totalPages)
+       /* this.totalPages= Math.floor(totalProducts / this.pageSize);
+        if(totalProducts% this.pageSize !=0){
+          this.totalPages =this.totalPages+1
+        }*/
       },
      
         error: err =>{
@@ -71,5 +100,13 @@ handlaCheckProduct(p: Product) {
       })
       }
 
+      handleEdit(product: Product) {
+        this.router.navigateByUrl(`/editProduct/${product.id}`)
+        }
+
+   // Méthode pour compter les produits avec checked=true
+  countCheckedProducts(): number {
+    return this.products.filter(product => product.checked).length;
+  }
 }
 

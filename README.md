@@ -15,8 +15,31 @@
 <img src="captures/c7.png">
 <h1>Capture8: Test de la creation d'un produit <h1>
 <img src="captures/c8.png">
-<h1>Capture8: Formulaire d'ajout<h1>
+<h1>Capture9: Formulaire d'ajout<h1>
 <img src="captures/c9.png"/>
+
+<h1>Capture10: Test d'affichage des pages avec "http://localhost:8089/products?_page=1&_limit=2"<h1>
+<img src="captures/c10.png"/>
+<h1>Capture11: Ajout de l'icone modifier<h1>
+<img src="captures/c11.png"/>
+<h1>Capture12: Recuperation des information d'un produit et les afficher dans le formulaire de modification<h1>
+<img src="captures/c12.png">
+<h1>Capture13: Test du modification d'un produit <h1>
+<img src="captures/c13.png">
+<h1>Capture14: Affichage du produit modifié<h1>
+<img src="captures/c14.png"/>
+
+<h1>Capture15: Ajout de la pagination et test de navigation entre les pages existantes <h1>
+<img src="captures/c15.png">
+<img src="captures/c16.png"/>
+<img src="captures/c17.png"/>
+<h1>Capture16: Ajout d'un card pour afficher le nombre total des page, la taille des produits par page, nombre total des produits et le nombre des produits avec la valeur de checked=true<h1>
+<img src="captures/c18.png"/>
+
+<h1>Capture E1:Captures des erreurs rencontré lors de la réalisation du projet: (absence du 'x-total-count' pour faire la pagination ) cette probleme à été resolu en utilisant des fonctions pour recuperer la taille du produit (getProducts) depuis le productService<h1>
+<img src="captures/e1.png"/>
+<img src="captures/e2.png"/>
+
 
 # EnsetApp
 
